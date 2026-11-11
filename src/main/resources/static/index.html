@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b15">
+  <title>CropCare AI — Smart crop health assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-icon">✳</span><span>cropcare<span class="accent">.ai</span></span></a>
+  <nav><a href="#how">How it works</a><a href="#support">Farmer support</a></nav>
+  <div class="top-actions"><span class="status-dot"></span><span class="status-text" id="apiStatus">Connecting</span><select id="language" aria-label="Choose language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option></select></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> INTELLIGENCE FOR EVERY FIELD</div>
+      <h1>A healthier harvest<br>starts with <em>one scan.</em></h1>
+      <p class="hero-text">Photograph a crop leaf. Get a likely disease identification, confidence information and practical first steps — in your language.</p>
+      <div class="hero-points"><span>✓ Tomato & potato</span><span>✓ Voice enabled</span><span>✓ Honest AI results</span></div>
+      <a class="text-link" href="#scanner">Explore the leaf scanner <span>↘</span></a>
+    </div>
+    <div class="hero-art">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="leaf-frame"><div class="leaf-symbol">❧</div><div class="scan-line"></div><span class="frame-label">FIELD VISION / 01</span></div>
+      <div class="float-card card-top"><span class="mini-icon">✦</span><div><b>AI powered</b><small>Leaf intelligence</small></div></div>
+      <div class="float-card card-bottom"><span class="live-dot"></span><div><b>Carefully calibrated</b><small>Uncertain results are flagged</small></div></div>
+    </div>
+  </section>
+
+  <section class="scanner-section" id="scanner">
+    <div class="section-heading"><div><div class="eyebrow">01 / CROP HEALTH SCANNER</div><h2>Let's check your leaf.</h2><p>Choose a clear, well-lit photo showing one leaf.</p></div><div class="supported"><span>●</span> Supports tomato & potato</div></div>
+    <div class="scanner-grid">
+      <div class="upload-panel">
+        <div class="upload-zone" id="dropZone">
+          <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp" hidden>
+          <div id="uploadPrompt" class="upload-prompt"><div class="upload-icon">＋</div><h3>Drop your leaf photo here</h3><p>or <button class="inline-button" id="browseBtn">browse files</button></p><small>JPG, PNG or WEBP · Max 8 MB</small></div>
+          <div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="Selected crop leaf"><button id="removeImage" class="remove-image" aria-label="Remove image">×</button></div>
+        </div>
+        <div class="upload-tip"><span>✧</span><p><b>Photo tip</b> — Use natural daylight, focus on the affected area and avoid busy backgrounds.</p></div>
+        <button id="analyzeBtn" class="primary-button" disabled><span>Analyze leaf</span><span>↗</span></button>
+        <div class="privacy-note">⌑ Your image is processed for this scan and is not stored by this demo.</div>
+      </div>
+      <div class="result-panel" id="resultPanel">
+        <div class="result-empty"><div class="empty-orbit"><span>✳</span></div><h3>Your crop report will appear here</h3><p>Upload a leaf image to begin your scan. We'll show the likely result only when confidence is sufficient.</p><div class="empty-tags"><span>DISEASE CHECK</span><span>CONFIDENCE</span><span>FIRST STEPS</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="voice-strip">
+    <div class="voice-copy"><div class="eyebrow">MADE FOR EVERY FARMER</div><h2>Just ask. We'll speak your language.</h2><p>Use voice to ask for help and hear your crop report in English, Hindi or Telugu. Browser speech support may vary by device.</p></div>
+    <div class="voice-control"><button id="voiceBtn" class="mic-button" aria-label="Start voice assistant">🎙</button><div><b id="voiceTitle">Talk to CropCare</b><small id="voiceHint">Tap the microphone to speak</small></div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  </section>
+
+  <section class="how-section" id="how"><div class="eyebrow">02 / SIMPLE BY DESIGN</div><h2>From leaf to next step.</h2><div class="steps">
+    <article><span>01</span><div class="step-icon">▧</div><h3>Photograph</h3><p>Take a clear photo of a tomato or potato leaf and upload it.</p></article>
+    <article><span>02</span><div class="step-icon">⌁</div><h3>Analyze</h3><p>The image model checks supported crop and disease classes.</p></article>
+    <article><span>03</span><div class="step-icon">✧</div><h3>Understand</h3><p>See confidence and reviewed first steps, or get an honest fallback.</p></article>
+  </div></section>
+
+  <section class="support-section" id="support"><div><div class="eyebrow">03 / LOCAL EXPERTISE MATTERS</div><h2>AI can guide.<br><em>Local experts confirm.</em></h2><p>CropCare is a screening aid, not a substitute for field inspection. If the result is uncertain or symptoms spread, contact your nearest Krishi Vigyan Kendra.</p><a class="outline-button" href="https://kvk.icar.gov.in/" target="_blank" rel="noopener">Find a KVK centre ↗</a></div><div class="support-art"><div class="support-circle">🌱</div><div class="support-caption">LOCAL KNOWLEDGE<br><b>STRONGER HARVESTS</b></div></div></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-icon">✳</span><span>cropcare<span class="accent">.ai</span></span></a><span>Built for small farms. Designed with care.</span><span>Screening support · Not a confirmed diagnosis</span></footer>
+<script src="/js/app.js"></script>
+</body></html>
